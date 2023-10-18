@@ -1,6 +1,31 @@
 import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import { AuthContext } from '../features/Authentication/AuthProvider';
 
 const Login = () => {
+  const { signin } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+
+    // console.log(email, password);
+    signin(email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log(user);
+      alert("Logged in")
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+  }
+
   return (
     <div className="hero font-display bg-neutral-50 py-10">
       <div className="hero-content flex-col">
@@ -10,7 +35,7 @@ const Login = () => {
         <div className="card w-full max-w-5xl shadow-xl bg-base-100">
           <form
             className="card-body"
-            // onSubmit={handleSignUp}
+            onSubmit={handleLogin}
           >
            
             
@@ -53,7 +78,7 @@ const Login = () => {
               </p>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-darkBlue text-white text-xl">
+              <button className="btn bg-darkBlue text-white text-xl" >
                 Login
               </button>
             </div>
