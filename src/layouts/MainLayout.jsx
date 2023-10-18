@@ -1,7 +1,9 @@
+import Navbar from '../components/Navbar';
+
 const MainLayout = () => {
   return (
-    <div>
-      MAIN LAYOUT      
+    <div>     
+      <Navbar/>
     </div>
   );
 };

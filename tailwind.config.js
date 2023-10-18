@@ -15,7 +15,7 @@ export default {
       'darkBlue': "#687EFF",
       'blue': "#80B3FF",
       "skyBlue": "#98E4FF",
-      "mint": "#B6FFA"
+      "mint": "#B6FFAA"
     },
   },
   plugins: [require("daisyui")],
