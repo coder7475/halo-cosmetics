@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 const Banner = () => {
   return (
     <div
-      className="hero mix-blend-darken min-h-[87vh]"
+      className="hero mix-blend-darken min-h-screen"
       style={{
         backgroundImage:
           "url(https://i.ibb.co/SvTr2sR/Halo-Cosmetics.png)",

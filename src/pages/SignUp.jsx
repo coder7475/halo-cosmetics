@@ -42,7 +42,7 @@ const SignUp = () => {
   }
 
   return (
-    <div className="hero font-display bg-neutral-50 py-10">
+    <div className="hero font-display bg-neutral-50 min-h-screen">
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Registration Form!</h1>
@@ -127,16 +127,7 @@ const SignUp = () => {
             </div>
           </form>
         </div>
-        <div className="divider">OR</div>
-        <div className="w-full bg-base-100 shadow-xl max-w-5xl">
-          <button
-            className="btn w-full rounded-xl text-xl "
-            // onClick={googleSignIn}
-          >
-             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current border rounded-full p-1 bg-darkBlue text-white"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg>           
-            SignIn with Facebook
-          </button>
-        </div>
+        
       </div>
     </div>
   );
