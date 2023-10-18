@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display : "'Titillium Web', sans-serif",
+        display : "Raleway, sans-serif",
       },
     },
     colors: {
