@@ -1,47 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
-const SignUp = () => {
+const Login = () => {
   return (
     <div className="hero font-display bg-neutral-50 py-10">
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Registration Form!</h1>
+          <h1 className="text-5xl font-bold">Login now!</h1>
         </div>
         <div className="card w-full max-w-5xl shadow-xl bg-base-100">
           <form
             className="card-body"
             // onSubmit={handleSignUp}
           >
-            <div className="form-control">
-              <label className="label" htmlFor="name">
-                <span className="label-text text-xl font-semibold">Name</span>
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Full Name"
-                className="input input-bordered"
-                autoComplete="true"
-                required
-              />
-            </div>
-            <div className="form-control" htmlFor="profile">
-              <label className="label">
-                <span className="label-text text-xl font-semibold">
-                  Profile
-                </span>
-              </label>
-              <input
-                id="profile"
-                name="profile"
-                type="text"
-                placeholder="Profile Picture URL"
-                className="input input-bordered"
-                required
-                autoComplete="true"
-              />
-            </div>
+           
+            
             <div className="form-control">
               <label className="label" htmlFor="email">
                 <span className="label-text text-xl font-semibold">Email</span>
@@ -74,15 +46,15 @@ const SignUp = () => {
             </div>
             <div className="text-xl font-medium mt-6">
               <p>
-                Already Have an Account? Please{" "}
-                <Link to={`/login`} className="text-blue text-xl font-bold">
-                  Login
+                Don&apos;t have an Account yet? Please{" "}
+                <Link to={`/signup`} className="text-blue text-xl font-bold">
+                  SignUp
                 </Link>
               </p>
             </div>
             <div className="form-control mt-6">
               <button className="btn bg-darkBlue text-white text-xl">
-                Register
+                Login
               </button>
             </div>
           </form>
@@ -102,5 +74,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
-
+export default Login;
