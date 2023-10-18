@@ -18,46 +18,75 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive, isPending }) =>
-                isActive ? "active font-bold bg-blue p-1 text-white" : isPending ? "pending" : ""
+                isActive
+                  ? "active font-bold bg-blue p-1 text-white"
+                  : isPending
+                  ? "pending"
+                  : ""
               }
             >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink 
-            to="/addProduct"
-            className={({ isActive, isPending }) =>
-                isActive ? "active font-bold bg-blue p-1 text-white" : isPending ? "pending" : ""
+            <NavLink
+              to="/addProduct"
+              className={({ isActive, isPending }) =>
+                isActive
+                  ? "active font-bold bg-blue p-1 text-white"
+                  : isPending
+                  ? "pending"
+                  : ""
               }
-            >Add Product</NavLink>
+            >
+              Add Product
+            </NavLink>
           </li>
           <li>
-            <NavLink 
-            to="/cart"
-            className={({ isActive, isPending }) =>
-                isActive ? "active font-bold bg-blue p-1 text-white" : isPending ? "pending" : ""
+            <NavLink
+              to="/cart"
+              className={({ isActive, isPending }) =>
+                isActive
+                  ? "active font-bold bg-blue p-1 text-white"
+                  : isPending
+                  ? "pending"
+                  : ""
               }
-            >My Cart</NavLink>
+            >
+              My Cart
+            </NavLink>
           </li>
         </ul>
       </div>
       <div className="">
         <ul className="flex gap-2 justify-center items-center">
           <li>
-            <NavLink to="/login"
+            <NavLink
+              to="/login"
               className={({ isActive, isPending }) =>
-              isActive ? "active font-bold bg-blue p-1 text-white" : isPending ? "pending" : ""
-            }
-            >Login</NavLink>
+                isActive
+                  ? "active font-bold bg-blue p-1 text-white"
+                  : isPending
+                  ? "pending"
+                  : ""
+              }
+            >
+              Login
+            </NavLink>
           </li>
           <li>
-            <NavLink 
+            <NavLink
               to="/addProduct"
               className={({ isActive, isPending }) =>
-                isActive ? "active font-bold bg-blue p-1 text-white" : isPending ? "pending" : ""
+                isActive
+                  ? "active font-bold bg-blue p-1 text-white"
+                  : isPending
+                  ? "pending"
+                  : ""
               }
-              >SignUp</NavLink>
+            >
+              SignUp
+            </NavLink>
           </li>
           <li className="w-12">
             <img
