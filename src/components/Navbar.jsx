@@ -15,23 +15,49 @@ const Navbar = () => {
       <div>
         <ul className=" flex gap-3">
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive, isPending }) =>
+                isActive ? "active font-bold bg-blue p-1 text-white" : isPending ? "pending" : ""
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/addProduct">Add Product</NavLink>
+            <NavLink 
+            to="/addProduct"
+            className={({ isActive, isPending }) =>
+                isActive ? "active font-bold bg-blue p-1 text-white" : isPending ? "pending" : ""
+              }
+            >Add Product</NavLink>
           </li>
           <li>
-            <NavLink to="/cart">My Cart</NavLink>
+            <NavLink 
+            to="/cart"
+            className={({ isActive, isPending }) =>
+                isActive ? "active font-bold bg-blue p-1 text-white" : isPending ? "pending" : ""
+              }
+            >My Cart</NavLink>
           </li>
         </ul>
       </div>
       <div className="">
         <ul className="flex gap-2 justify-center items-center">
           <li>
-            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/login"
+              className={({ isActive, isPending }) =>
+              isActive ? "active font-bold bg-blue p-1 text-white" : isPending ? "pending" : ""
+            }
+            >Login</NavLink>
           </li>
           <li>
-            <NavLink to="/addProduct">SignUp</NavLink>
+            <NavLink 
+              to="/addProduct"
+              className={({ isActive, isPending }) =>
+                isActive ? "active font-bold bg-blue p-1 text-white" : isPending ? "pending" : ""
+              }
+              >SignUp</NavLink>
           </li>
           <li className="w-12">
             <img
