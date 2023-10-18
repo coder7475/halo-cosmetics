@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from 'react';
-import { AuthContext } from '../features/Authentication/AuthProvider';
+import { useContext } from "react";
+import { AuthContext } from "../features/Authentication/AuthProvider";
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
@@ -67,44 +67,49 @@ const Navbar = () => {
       <div className="">
         <ul className="flex gap-2 justify-center items-center">
           <li>
-            <NavLink
-              to="/login"
-              className={({ isActive, isPending }) =>
+            {user ? (
+              <button className="btn">Logout</button>
+            ) : (
+              
+              <NavLink
+                to="/login"
+                className={({ isActive, isPending }) =>
                 isActive
-                  ? "active font-bold bg-darkBlue p-1 text-white"
-                  : isPending
-                  ? "pending"
-                  : ""
+                ? "active font-bold bg-darkBlue p-1 text-white"
+                : isPending
+                ? "pending"
+                : ""
               }
-            >
-              Login
-            </NavLink>
+              >
+              <button type="button" className="btn">
+                Login
+              </button>
+                </NavLink>
+            )}
           </li>
           <li>
-            {
-              user? "":
+            {user ? (
+              ""
+            ) : (
+              <NavLink
+                to="/signup"
+                className={({ isActive, isPending }) =>
+                  isActive
+                    ? "active font-bold bg-darkBlue p-1 text-white"
+                    : isPending
+                    ? "pending"
+                    : ""
+                }
+              >
+                <button type="button" className="btn">
 
-      
-            <NavLink
-              to="/signup"
-              className={({ isActive, isPending }) =>
-                isActive
-                  ? "active font-bold bg-darkBlue p-1 text-white"
-                  : isPending
-                  ? "pending"
-                  : ""
-              }
-            >
-              SignUp
-            </NavLink>
-          }
+                  SignUp
+                </button>
+              </NavLink>
+            )}
           </li>
-          <li className="w-12">
-            <img
-              src="https://i.ibb.co/85ySkY3/anya.jpg"
-              className="rounded-full"
-              
-            />
+          <li className="w-14 rounded-full">
+            <img src={user.photoURL} className="rounded-full" />
           </li>
         </ul>
       </div>
