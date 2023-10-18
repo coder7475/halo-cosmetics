@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import auth from './firebase.config';
 import { useEffect, useState } from "react";
 
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
