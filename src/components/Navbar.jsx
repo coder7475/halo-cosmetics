@@ -77,7 +77,7 @@ const Navbar = () => {
               : (
               <img src={user.photoURL} className="rounded-full" />
             ) : (
-              <img src="/novy_kanal.svg" alt="logo" />
+              ""
             )}
           </li>
           <li>

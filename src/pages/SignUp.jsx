@@ -1,45 +1,44 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from '../features/Authentication/AuthProvider';
+import { AuthContext } from "../features/Authentication/AuthProvider";
 import { updateProfile } from "firebase/auth";
-import auth from '../features/Authentication/firebase.config';
+import auth from "../features/Authentication/firebase.config";
 
 const SignUp = () => {
   const { signUp } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSignUp = (e) => {
-      e.preventDefault();
-  
-      const form = new FormData(e.currentTarget);
-      const name = form.get("name");
-      const profile = form.get("profile");
-      const email = form.get("email");
-      const password = form.get("password");
-  
-      // console.log(email, password, name, profile);
-  
-      // password validation
-      const re = /(?=.*[A-Z])(?=.*[\W_]).{6,}/g;
-      const ans = re.test(password);
-      
-      // console.log(ans);
-      if (!ans) {
-        return alert("Invalid password");
-      }
-      
-      signUp(email, password)
-        .then((res) => {
-          updateProfile(auth.currentUser, {
-            displayName: name, photoURL: profile
-          })
-            .then(res => console.log(res))
-            console.log(res);
-            navigate("/");
-        } 
-        )
-        .catch((err) => console.log(err));
-  }
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+    const name = form.get("name");
+    const profile = form.get("profile");
+    const email = form.get("email");
+    const password = form.get("password");
+
+    // console.log(email, password, name, profile);
+
+    // password validation
+    const re = /(?=.*[A-Z])(?=.*[\W_]).{6,}/g;
+    const ans = re.test(password);
+
+    // console.log(ans);
+    if (!ans) {
+      return alert("Invalid password");
+    }
+
+    signUp(email, password)
+      .then((res) => {
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: profile,
+        }).then((res) => console.log(res));
+        console.log(res);
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="hero font-display bg-neutral-50 min-h-screen">
@@ -48,10 +47,7 @@ const SignUp = () => {
           <h1 className="text-5xl font-bold">Registration Form!</h1>
         </div>
         <div className="card w-full max-w-5xl shadow-xl bg-base-100">
-          <form
-            className="card-body"
-            onSubmit={handleSignUp}
-          >
+          <form className="card-body" onSubmit={handleSignUp}>
             <div className="form-control">
               <label className="label" htmlFor="name">
                 <span className="label-text text-xl font-semibold">Name</span>
@@ -127,11 +123,9 @@ const SignUp = () => {
             </div>
           </form>
         </div>
-        
       </div>
     </div>
   );
 };
 
 export default SignUp;
-
