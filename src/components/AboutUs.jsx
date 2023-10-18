@@ -3,7 +3,7 @@ import { FaRocket, FaEye, FaHandshake } from 'react-icons/fa';
 const AboutUs = () => {
   return (
     <div className="flex flex-col justify-center items-center gap-5 my-10 w-9/12 mx-auto min-h-screen">
-      <h1 className="text-3xl font-bold">About US</h1>
+      <h1 className="text-3xl font-bold text-darkBlue">About US</h1>
       <p>
       At Halo, we are dedicated to redefining beauty through innovation, quality, and inclusivity. Founded with a passion for enhancing your natural allure, we believe that true beauty radiates from within. Our mission is to empower individuals to embrace their unique style, embrace their confidence, and express their individualit
       </p>

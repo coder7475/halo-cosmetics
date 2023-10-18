@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="navbar flex flex-col lg:flex-row justify-between items-center bg-white ">
+    <div className="navbar flex flex-col lg:flex-row justify-between items-center bg-white">
       <div className=" flex gap-2">
         <div className="flex flex-col items-center">
           <div className="flex justify-center items-center gap-2">
@@ -19,7 +19,7 @@ const Navbar = () => {
               to="/"
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "active font-bold bg-blue p-1 text-white"
+                  ? "active font-bold bg-darkBlue p-1 text-white"
                   : isPending
                   ? "pending"
                   : ""
@@ -33,7 +33,7 @@ const Navbar = () => {
               to="/addProduct"
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "active font-bold bg-blue p-1 text-white"
+                  ? "active font-bold bg-darkBlue p-1 text-white"
                   : isPending
                   ? "pending"
                   : ""
@@ -47,7 +47,7 @@ const Navbar = () => {
               to="/cart"
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "active font-bold bg-blue p-1 text-white"
+                  ? "active font-bold bg-darkBlue p-1 text-white"
                   : isPending
                   ? "pending"
                   : ""
@@ -65,7 +65,7 @@ const Navbar = () => {
               to="/login"
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "active font-bold bg-blue p-1 text-white"
+                  ? "active font-bold bg-darkBlue p-1 text-white"
                   : isPending
                   ? "pending"
                   : ""
@@ -76,10 +76,10 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/addProduct"
+              to="/signup"
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "active font-bold bg-blue p-1 text-white"
+                  ? "active font-bold bg-darkBlue p-1 text-white"
                   : isPending
                   ? "pending"
                   : ""
@@ -92,6 +92,7 @@ const Navbar = () => {
             <img
               src="https://i.ibb.co/85ySkY3/anya.jpg"
               className="rounded-full"
+              
             />
           </li>
         </ul>
