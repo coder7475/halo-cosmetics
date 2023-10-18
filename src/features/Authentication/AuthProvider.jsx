@@ -17,6 +17,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const provider = new FacebookAuthProvider();
+  const [fbpic, setFbpic] = useState(null);
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -53,7 +54,9 @@ const AuthProvider = ({ children }) => {
     signUp,
     signin,
     signout,
-    facebookSignIn
+    facebookSignIn,
+    setFbpic,
+    fbpic
   };
 
   return (

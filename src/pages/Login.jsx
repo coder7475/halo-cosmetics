@@ -1,10 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from 'react';
 import { AuthContext } from '../features/Authentication/AuthProvider';
+import { FacebookAuthProvider } from "firebase/auth";
 
 const Login = () => {
-  const { signin, facebookSignIn } = useContext(AuthContext);
+  const { signin, facebookSignIn, setFbpic,
+    fbpic} = useContext(AuthContext);
   const navigate = useNavigate();
+  
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -30,7 +33,21 @@ const Login = () => {
 
   const handleFbSignIn = () => {
     facebookSignIn()
-      .then(res => alert(res))
+      .then(res => {
+        console.log(res);
+          // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(res);
+        const accessToken = credential.accessToken;
+        fetch(`https://graph.facebook.com/${res.user.providerData[0].uid}/picture?type=large&access_token=${accessToken}`)
+          .then((response)=>response.blob())
+          .then(blob => {
+            setFbpic(URL.createObjectURL(blob))
+          })
+          .catch(err => console.log(err))
+
+        navigate("/");
+        
+      })
       .catch(err => alert(err))
   }
 

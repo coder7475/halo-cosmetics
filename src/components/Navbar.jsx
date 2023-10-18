@@ -3,13 +3,14 @@ import { useContext } from "react";
 import { AuthContext } from "../features/Authentication/AuthProvider";
 
 const Navbar = () => {
-  const { user, signout } = useContext(AuthContext);
+  const { user, signout, fbpic, setFbpic } = useContext(AuthContext);
 
   console.log(user);
 
   const handleLogout = () => {
+    setFbpic(null);
     signout();
-  }
+  };
 
   return (
     <div className="navbar font-medium flex flex-col lg:flex-row justify-between items-center bg-white">
@@ -70,12 +71,14 @@ const Navbar = () => {
       </div>
       <div className="">
         <ul className="flex gap-2 justify-center items-center">
-        <li className="w-14 rounded-full">
-            {
-              user ?
+          <li className="w-14 rounded-full">
+            {user ? fbpic ? 
+              <img src={fbpic} className="rounded-full" />
+              : (
               <img src={user.photoURL} className="rounded-full" />
-              : <img src="/novy_kanal.svg" alt="logo" />
-            }
+            ) : (
+              <img src="/novy_kanal.svg" alt="logo" />
+            )}
           </li>
           <li>
             {user ? (
@@ -92,32 +95,32 @@ const Navbar = () => {
                 }
               >
                 <button type="button" className="btn">
-
                   SignUp
                 </button>
               </NavLink>
             )}
           </li>
-          
+
           <li>
             {user ? (
-              <button className="btn" onClick={handleLogout}>Logout</button>
+              <button className="btn" onClick={handleLogout}>
+                Logout
+              </button>
             ) : (
-              
               <NavLink
                 to="/login"
                 className={({ isActive, isPending }) =>
-                isActive
-                ? "active font-bold bg-darkBlue text-white"
-                : isPending
-                ? "pending"
-                : ""
-              }
+                  isActive
+                    ? "active font-bold bg-darkBlue text-white"
+                    : isPending
+                    ? "pending"
+                    : ""
+                }
               >
-              <button type="button" className="btn">
-                Login
-              </button>
-                </NavLink>
+                <button type="button" className="btn">
+                  Login
+                </button>
+              </NavLink>
             )}
           </li>
         </ul>
