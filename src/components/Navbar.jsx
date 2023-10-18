@@ -3,9 +3,13 @@ import { useContext } from "react";
 import { AuthContext } from "../features/Authentication/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, signout } = useContext(AuthContext);
 
   console.log(user);
+
+  const handleLogout = () => {
+    signout();
+  }
 
   return (
     <div className="navbar font-medium flex flex-col lg:flex-row justify-between items-center bg-white">
@@ -68,14 +72,14 @@ const Navbar = () => {
         <ul className="flex gap-2 justify-center items-center">
           <li>
             {user ? (
-              <button className="btn">Logout</button>
+              <button className="btn" onClick={handleLogout}>Logout</button>
             ) : (
               
               <NavLink
                 to="/login"
                 className={({ isActive, isPending }) =>
                 isActive
-                ? "active font-bold bg-darkBlue p-1 text-white"
+                ? "active font-bold bg-darkBlue text-white"
                 : isPending
                 ? "pending"
                 : ""
@@ -95,7 +99,7 @@ const Navbar = () => {
                 to="/signup"
                 className={({ isActive, isPending }) =>
                   isActive
-                    ? "active font-bold bg-darkBlue p-1 text-white"
+                    ? "active font-bold bg-darkBlue text-white"
                     : isPending
                     ? "pending"
                     : ""
@@ -109,7 +113,11 @@ const Navbar = () => {
             )}
           </li>
           <li className="w-14 rounded-full">
-            <img src={user.photoURL} className="rounded-full" />
+            {
+              user ?
+              <img src={user.photoURL} className="rounded-full" />
+              : ""
+            }
           </li>
         </ul>
       </div>
