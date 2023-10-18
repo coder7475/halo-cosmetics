@@ -70,6 +70,35 @@ const Navbar = () => {
       </div>
       <div className="">
         <ul className="flex gap-2 justify-center items-center">
+        <li className="w-14 rounded-full">
+            {
+              user ?
+              <img src={user.photoURL} className="rounded-full" />
+              : <img src="/novy_kanal.svg" alt="logo" />
+            }
+          </li>
+          <li>
+            {user ? (
+              user.displayName
+            ) : (
+              <NavLink
+                to="/signup"
+                className={({ isActive, isPending }) =>
+                  isActive
+                    ? "active font-bold bg-darkBlue text-white"
+                    : isPending
+                    ? "pending"
+                    : ""
+                }
+              >
+                <button type="button" className="btn">
+
+                  SignUp
+                </button>
+              </NavLink>
+            )}
+          </li>
+          
           <li>
             {user ? (
               <button className="btn" onClick={handleLogout}>Logout</button>
@@ -90,34 +119,6 @@ const Navbar = () => {
               </button>
                 </NavLink>
             )}
-          </li>
-          <li>
-            {user ? (
-              ""
-            ) : (
-              <NavLink
-                to="/signup"
-                className={({ isActive, isPending }) =>
-                  isActive
-                    ? "active font-bold bg-darkBlue text-white"
-                    : isPending
-                    ? "pending"
-                    : ""
-                }
-              >
-                <button type="button" className="btn">
-
-                  SignUp
-                </button>
-              </NavLink>
-            )}
-          </li>
-          <li className="w-14 rounded-full">
-            {
-              user ?
-              <img src={user.photoURL} className="rounded-full" />
-              : <img src="/novy_kanal.svg" alt="logo" />
-            }
           </li>
         </ul>
       </div>
