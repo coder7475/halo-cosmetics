@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from '../features/Authentication/AuthProvider';
 import { updateProfile } from "firebase/auth";
@@ -6,6 +6,7 @@ import auth from '../features/Authentication/firebase.config';
 
 const SignUp = () => {
   const { signUp } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSignUp = (e) => {
       e.preventDefault();
@@ -34,7 +35,7 @@ const SignUp = () => {
           })
             .then(res => console.log(res))
             console.log(res);
-            
+            navigate("/");
         } 
         )
         .catch((err) => console.log(err));
