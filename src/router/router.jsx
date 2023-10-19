@@ -6,6 +6,8 @@ import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
 import AddProduct from "../pages/AddProduct";
 import PrivateRoute from "./PrivateRoute";
+import Products from '../pages/Products';
+import brandLoader from '../ulils/brandLoader';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/:id",
+        element: <Products />,
+        loader: brandLoader
       },
       {
         path: "/signup",

@@ -2,7 +2,7 @@ const AddProduct = () => {
   const handleAddProduct = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-    const productName = form.get("name");
+    const name = form.get("name");
     const image = form.get("image");
     const brand = form.get("brand");
     const price = form.get("price");
@@ -10,8 +10,32 @@ const AddProduct = () => {
     const rating = form.get("rating");
     const description = form.get("description");
 
-    console.log(productName, image, brand, price);
-    console.log(type, rating, description);
+    const product = {
+      name,
+      image,
+      brand,
+      price,
+      type,
+      rating,
+      description
+    }
+
+    // send to database via server
+    fetch("https://server-halo.vercel.app/products", {
+      // fetch("http://localhost:3001/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(product)
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
+
+    // console.log(productName, image, brand, price);
+    // console.log(type, rating, description);
+
+
   }
 
   return (
