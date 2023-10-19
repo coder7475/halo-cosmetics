@@ -39,7 +39,7 @@ const AddProduct = () => {
                 id="name"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Type product name"
-                required=""
+                required
               />
             </div>
             <div className="sm:col-span-2">
@@ -55,7 +55,7 @@ const AddProduct = () => {
                 id="image"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Paste Image URL here"
-                required=""
+                required
               />
             </div>
             <div>
@@ -68,8 +68,8 @@ const AddProduct = () => {
               <select
                 id="brand"
                 name="brand"
-                defaultValue={'DEFAULT'}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                required
               >
                 <option value="DEFAULT" disabled>Select brand</option>
                 <option value="Flower Cosmetics">Flower Cosmetics</option>
@@ -94,7 +94,7 @@ const AddProduct = () => {
                 id="price"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="9999"
-                required=""
+                required
               />
             </div>
             <div>
@@ -107,10 +107,10 @@ const AddProduct = () => {
               <select
                 id="type"
                 name="type"
-                defaultValue={'DEFAULT'}
+                required
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
               >
-                <option value="DEFAULT" disabled>Select type</option>
+                <option disabled>Select type</option>
                 <option value="MK">Makeup </option>
                 <option value="hC">Hair Care</option>
                 <option value="SC">Skin Care</option>
@@ -128,10 +128,10 @@ const AddProduct = () => {
               <select
                 id="rating"
                 name="rating"
-                defaultValue={'DEFAULT'}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                required
               >
-                <option disabled  value="DEFAULT">Select rating</option>
+                <option disabled  >Select rating</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -152,6 +152,7 @@ const AddProduct = () => {
                 rows="8"
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Your description here"
+                required
               ></textarea>
             </div>
           </div>
