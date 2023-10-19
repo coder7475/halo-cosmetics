@@ -5,7 +5,21 @@ import { Navigate } from 'react-router-dom';
 import PropTypes from "prop-types";
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
+
+  if (loading)
+    return (
+      <div className="w-full flex justify-center items-center ">
+        <span className="loading loading-ring loading-xs"></span>
+        <span className="loading loading-ring loading-xs"></span>
+        <span className="loading loading-ring loading-sm"></span>
+        <span className="loading loading-ring loading-sm"></span>
+        <span className="loading loading-ring loading-md"></span>
+        <span className="loading loading-ring loading-md"></span>
+        <span className="loading loading-ring loading-lg"></span>
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
 
   if (user) {
     return children;
