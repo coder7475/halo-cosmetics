@@ -1,6 +1,6 @@
 const TeamSection = () => {
   return (
-    <div className="py-20 bg-gray-50">
+    <div className="py-20 bg-gray-50 mx-w-5xl mx-auto">
       <div className="container mx-auto px-6 md:px-12 xl:px-32">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-center text-2xl text-gray-900 font-bold md:text-4xl text-darkBlue">
