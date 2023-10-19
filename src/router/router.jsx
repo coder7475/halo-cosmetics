@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/productDetails/:id",
-        element: <ProductDetails />,
+        element: <PrivateRoute><ProductDetails /></PrivateRoute>,
         loader: brandLoader
       }
       ,
