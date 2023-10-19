@@ -69,7 +69,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="">
+      
         <ul className="flex gap-2 justify-center items-center">
           <li className="w-14 rounded-full">
             {user ? fbpic ? 
@@ -77,7 +77,7 @@ const Navbar = () => {
               : (
               <img src={user.photoURL} className="rounded-full" />
             ) : (
-              ""
+              <img src="/novy_kanal.svg" className="rounded-full w-12" />
             )}
           </li>
           <li>
@@ -124,7 +124,7 @@ const Navbar = () => {
             )}
           </li>
         </ul>
-      </div>
+      
     </div>
   );
 };

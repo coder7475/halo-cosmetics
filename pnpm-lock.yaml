@@ -29,6 +29,9 @@ dependencies:
   react-router-dom:
     specifier: ^6.17.0
     version: 6.17.0(react-dom@18.2.0)(react@18.2.0)
+  react-star-ratings:
+    specifier: ^2.3.0
+    version: 2.3.0
   sort-by:
     specifier: ^1.2.0
     version: 1.2.0
@@ -1448,6 +1451,10 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
+
+  /classnames@2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
 
   /cliui@8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
@@ -2874,6 +2881,23 @@ packages:
     dependencies:
       '@remix-run/router': 1.10.0
       react: 18.2.0
+    dev: false
+
+  /react-star-ratings@2.3.0:
+    resolution: {integrity: sha512-34Z/oFNDRRn4ZcX7F3t9ccnpo7SQ32gD/vsusQOBc6B6vlqaGR6tke1/Yx3jTDjemKRSmXqhKgpPTR7/JAXq6A==}
+    dependencies:
+      classnames: 2.3.2
+      prop-types: 15.8.1
+      react: 16.14.0
+    dev: false
+
+  /react@16.14.0:
+    resolution: {integrity: sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.8.1
     dev: false
 
   /react@18.2.0:
