@@ -17,6 +17,7 @@ const Products = () => {
   return (
     <div className="min-h-screen pt-10 bg-neutral-50 ">
       <h1 className="text-5xl font-bold text-center ">{name}</h1>
+      
       <div className="max-w-5xl mx-auto max-h-screen mt-10">
         <div className="carousel">
           <div id="slide1" className="carousel-item relative w-full">

@@ -5,7 +5,7 @@ import { AuthContext } from "../features/Authentication/AuthProvider";
 const Navbar = () => {
   const { user, signout, fbpic, setFbpic } = useContext(AuthContext);
 
-  console.log(user);
+  // console.log(user);
 
   const handleLogout = () => {
     setFbpic(null);
@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className=" flex gap-2">
         <div className="flex flex-col items-center">
           <div className="flex justify-center items-center gap-2">
-            <img src="novy_kanal.svg" alt="logo" className="w-12" />
+            <img src="/novy_kanal.svg" alt="logo" className="w-12" />
             <h1 className="text-2xl font-bold">Halo</h1>
           </div>
           <p className="font-light text-sm">Cosmetics & Beauty</p>

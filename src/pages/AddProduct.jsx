@@ -139,7 +139,7 @@ const AddProduct = () => {
                 <option value="hC">Hair Care</option>
                 <option value="SC">Skin Care</option>
                 <option value="BC">Body Care</option>
-                <option value="PF">Perfume</option>
+                <option value="NC">Nail Care</option>
               </select>
             </div>
             <div>
