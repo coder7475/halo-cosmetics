@@ -6,7 +6,7 @@ const Brands = () => {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {   
-    fetch('https://server-halo.vercel.app/brands')
+    fetch('http://localhost:3002/brands')
       .then(res => res.json())
       .then(data => setBrands(data))
 
