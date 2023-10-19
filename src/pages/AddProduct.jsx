@@ -3,9 +3,14 @@ const AddProduct = () => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const productName = form.get("name");
-
-    console.log(form);
-    console.log(productName);
+    const image = form.get("image");
+    const brand = form.get("brand");
+    const price = form.get("price");
+    const type = form.get("type");
+    const rating = form.get("rating");
+    const description = form.get("description");
+    console.log(productName, image, brand, price);
+    console.log(type, rating, description);
   }
 
   return (
@@ -38,7 +43,7 @@ const AddProduct = () => {
             </div>
             <div className="sm:col-span-2">
               <label
-                htmlFor="name"
+                htmlFor="image"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Product Image
@@ -98,7 +103,7 @@ const AddProduct = () => {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
               >
                 <option value="DEFAULT" disabled>Select type</option>
-                <option value="MK">Makeup</option>
+                <option value="MK">Makeup </option>
                 <option value="hC">Hair Care</option>
                 <option value="SC">Skin Care</option>
                 <option value="BC">Body Care</option>
@@ -135,6 +140,7 @@ const AddProduct = () => {
               </label>
               <textarea
                 id="description"
+                name="description"
                 rows="8"
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Your description here"
