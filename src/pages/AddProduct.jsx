@@ -32,7 +32,7 @@ const AddProduct = () => {
       .then(res => res.json())
       .then(data => console.log(data))
 
-    // console.log(productName, image, brand, price);
+    console.log(name, image, brand, price);
     // console.log(type, rating, description);
 
 
