@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
+import BrandCard from './BrandCard';
 
 const Brands = () => {
   const [brands, setBrands] = useState([]);
@@ -10,13 +11,16 @@ const Brands = () => {
       .then(data => setBrands(data))
 
   }, []);
-  console.log(brands);
+  // console.log(brands);
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col gap-10 max-w-5xl mx-auto">
       <h1 className="text-5xl font-bold text-center text-darkBlue">Our Brands</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-2">
+
       {
-        brands.map(brand => <li>{brand.name}</li>)
+        brands.map(brand => <BrandCard key={brand._id} brand={brand}></BrandCard>)
       }
+      </div>
     </div>
   );
 };
