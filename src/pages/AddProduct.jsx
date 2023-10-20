@@ -1,3 +1,6 @@
+
+import Swal from "sweetalert2";
+
 const AddProduct = () => {
   const handleAddProduct = (e) => {
     e.preventDefault();
@@ -30,7 +33,12 @@ const AddProduct = () => {
       body: JSON.stringify(product)
     })
       .then(res => res.json())
-      .then(data => console.log(data))
+      // eslint-disable-next-line no-unused-vars
+      .then(data => Swal.fire(
+        "Added!",
+        "You product has been added!",
+        "success"
+      ))
 
     console.log(name, image, brand, price);
     // console.log(type, rating, description);

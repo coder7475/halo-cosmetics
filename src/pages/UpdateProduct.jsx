@@ -1,20 +1,64 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
   const { id } = useParams();
   const { products } = useLoaderData();
   // console.log(id, products);
   const product = products.find(product => product._id === id);
-  console.log(product);
+  // console.log(product);
+
+  const handleUpdate = (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+    const name = form.get("name");
+    const image = form.get("image");
+    const brand = form.get("brand");
+    const price = form.get("price");
+    const type = form.get("type");
+    const rating = form.get("rating");
+    const description = form.get("description");
+    const info = {
+      id,
+      name, 
+      image,
+      brand,
+      price,
+      type,
+      rating,
+      description
+    }
+    console.log(name, image, brand, price, type, rating, description);
+    fetch("http://localhost:3002/updateProduct", {
+      // fetch("http://localhost:3001/products", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(info)
+    })
+      .then(res => res.json())
+      // eslint-disable-next-line no-unused-vars
+      .then(data => Swal.fire(
+        "Updated!",
+        "You product has been updated!",
+        "success"
+      ))
+
+  }
+
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-        <h2 className="mb-10 text-darkBlue text-5xl font-bold text-gray-900 dark:text-white text-center">
+        <h2 className="mb-10 text-darkBlue text-5xl font-bold text-gray-900 dark:text-white text-center"
+        >
           Update the product
         </h2>
 
         <form 
           className="form-control"
+          onSubmit={handleUpdate}
         >
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
             <div className="sm:col-span-2">
@@ -124,7 +168,7 @@ const UpdateProduct = () => {
               <select
                 id="rating"
                 name="rating"
-                defaultValue={product.name}
+                defaultValue={product.rating}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 required
               >
