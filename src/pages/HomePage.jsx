@@ -8,7 +8,7 @@ import Brands from '../components/Brands';
 const HomePage = () => {
   return (
     <div className="dark:bg-neutral-600">
-      <div className="dark:bg-neutral-200">
+      <div className="dark:bg-white">
         <Banner />
       </div>
       <AboutUs />

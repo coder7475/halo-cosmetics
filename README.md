@@ -1,8 +1,32 @@
-# React + Vite
+# Project Title
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BrandShop - Halo Cosmetics & Beauty
 
-Currently, two official plugins are available:
+# Live Link
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### https://halo-cosmetics.web.app/
+
+*Warning: server on vercel sometimes does not connect,
+          please try again after a few minutes
+
+## Features
+
+- Brand Company is shown on Home Page in Card Form
+- Upon Clicking brand card show advertisements and products based on the brand
+- Add product page where user can add new product to database
+- Upon clicking update button on product page go to update product page where you 
+  can update the product details
+- Upon clicking view details page show all details of the product
+- Upon adding add to cart button on view details page one can purchase a product
+- In My Cart page show all purchased products
+- Registration and Login using email and password
+- Signin using Facebook 
+- Show SweetAlert for successful or unsuccesful registration
+- Show SweetAlert for not meeting requirement for password on registration page
+- Show SweetAlert for invalid or successful login
+- Show name, profile pic and logout button upon login
+- A Error Page is shown for wrong route
+
+## Authors
+
+- [@coder7475](https://github.com/coder7475)
