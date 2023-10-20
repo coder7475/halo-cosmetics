@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../features/Authentication/AuthProvider";
 import { FacebookAuthProvider } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { signin, facebookSignIn, setFbpic } = useContext(AuthContext);
@@ -15,17 +16,20 @@ const Login = () => {
 
     // console.log(email, password);
     signin(email, password)
+      // eslint-disable-next-line no-unused-vars
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        alert("Logged in");
+        // const user = userCredential.user;
+        // console.log(user);
+        // alert("Logged in");
+        Swal.fire("Success!", `Suceess`, "success");
         navigate("/");
       })
       .catch((error) => {
         // const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage);
+        // alert(errorMessage);
+        Swal.fire("Error!", `${errorMessage}`, "error");
       });
   };
 
