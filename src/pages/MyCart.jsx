@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../features/Authentication/AuthProvider";
 // import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -9,11 +9,14 @@ const MyCart = () => {
   const { user } = useContext(AuthContext);
   const { uid } = user;
   // console.log(products);
-  const myProducts = products.filter((product) => product.uid === uid);
+  const filtered = products.filter((product) => product.uid === uid);
   // console.log(myProducts);
-
+  const [myProducts, setMyProducts] = useState(filtered);
+  
 
   const handleDelete = (id) => {
+    const rem = myProducts.filter((product) => product._id !== id);
+    setMyProducts(rem);
     const data = {
       id,
       uid    
