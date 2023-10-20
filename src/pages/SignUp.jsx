@@ -6,7 +6,7 @@ import auth from "../features/Authentication/firebase.config";
 import Swal from "sweetalert2";
 
 const SignUp = () => {
-  const { signUp } = useContext(AuthContext);
+  const { signUp, signout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSignUp = (e) => {
@@ -30,15 +30,17 @@ const SignUp = () => {
     }
 
     signUp(email, password)
+      // eslint-disable-next-line no-unused-vars
       .then((res) => {
         updateProfile(auth.currentUser, {
           displayName: name,
           photoURL: profile,
         }).then((res) => console.log(res));
-        console.log(res);
-        navigate("/");
+        Swal.fire("Success!", `Successful Registration. Please Login`, "success");
+        signout();
+        navigate("/login");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => Swal.fire("Error!", `${err}`, "error"));
   };
 
   return (
