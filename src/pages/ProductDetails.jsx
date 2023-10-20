@@ -1,20 +1,14 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { useContext } from 'react';
+import { useContext } from "react";
 import { AuthContext } from "../features/Authentication/AuthProvider";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
-
   const { id } = useParams();
-  const {
-    // brands,
-    products,
-  } = useLoaderData();
+  const { products } = useLoaderData();
   const product = products.find((product) => product._id === id);
-  const { name, brand, image, rating, type, price, 
-    description 
-  } = product;
-  const { user } =  useContext(AuthContext);
+  const { name, brand, image, rating, type, price, description } = product;
+  const { user } = useContext(AuthContext);
   const { uid } = user;
 
   const handleCart = () => {
@@ -23,27 +17,29 @@ const ProductDetails = () => {
       name,
       brand,
       image,
-      rating, 
+      rating,
       type,
-      price
-    }
+      price,
+    };
 
     fetch("http://localhost:3002/cart", {
       // fetch("http://localhost:3001/products", {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
       },
-      body: JSON.stringify(cartProduct)
+      body: JSON.stringify(cartProduct),
     })
-      .then(res => res.json())
+      .then((res) => res.json())
       // eslint-disable-next-line no-unused-vars
-      .then(data => Swal.fire(
-        'Success!',
-        'You product has been added to the cart!',
-        'success'
-      ))
-  }
+      .then((data) =>
+        Swal.fire(
+          "Success!",
+          "You product has been added to the cart!",
+          "success"
+        )
+      );
+  };
 
   // console.log(uid);
 
@@ -59,16 +55,15 @@ const ProductDetails = () => {
             <span className="font-bold">Name:</span> {name}
           </p>
           <p className="antialiased leading-relaxed text-blue-gray-900">
-          <span className="font-bold">Price:</span> ${price}
+            <span className="font-bold">Price:</span> ${price}
           </p>
           <p className="antialiased leading-relaxed text-blue-gray-900">
-            <span className="font-bold">Brand:</span>  {brand}
+            <span className="font-bold">Brand:</span> {brand}
           </p>
           <p className="antialiased leading-relaxed text-blue-gray-900">
-            <span className="font-bold">Type:</span>  {type}
+            <span className="font-bold">Type:</span> {type}
           </p>
           <p className="flex items-center mx-auto justify-center gap-1.5 leading-relaxed text-blue-gray-900 antialiased text-center">
-            
             <span className="font-bold">Rating:</span> {rating}
             <svg
               xmlns="http://www.w3.org/2000/svg"
