@@ -6,8 +6,8 @@ const BrandCard = ({ brand }) => {
 
   return (
     <Link to={`/${_id}`}>
-      <div className="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
-        <div className="relative mt-4 overflow-hidden text-gray-700 bg-white shadow-lg h-60 rounded-xl bg-clip-border">
+      <div className="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border dark:bg-blue ">
+        <div className="relative overflow-hidden text-gray-700 bg-white shadow-lg h-60 rounded-xl bg-clip-border">
           <img
             src={brand.image}
             alt="profile-picture"
