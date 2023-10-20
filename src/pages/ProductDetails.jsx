@@ -1,6 +1,10 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { useContext } from 'react';
+import { AuthContext } from "../features/Authentication/AuthProvider";
+import Swal from 'sweetalert2';
 
 const ProductDetails = () => {
+
   const { id } = useParams();
   const {
     // brands,
@@ -10,7 +14,37 @@ const ProductDetails = () => {
   const { name, brand, image, rating, type, price, 
     description 
   } = product;
-  console.log(product);
+  const { user } =  useContext(AuthContext);
+  const { uid } = user;
+
+  const handleCart = () => {
+    const cartProduct = {
+      uid,
+      name,
+      brand,
+      image,
+      rating, 
+      type,
+      price
+    }
+
+    fetch("http://localhost:3002/cart", {
+      // fetch("http://localhost:3001/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(cartProduct)
+    })
+      .then(res => res.json())
+      .then(data => Swal.fire(
+        'Success!',
+        'You product has been added to the cart!',
+        'success'
+      ))
+  }
+
+  // console.log(uid);
 
   return (
     <div className="relative max-w-3xl mx-auto text-3xl text-center flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border mt-10 mb-10">
@@ -59,6 +93,7 @@ const ProductDetails = () => {
         <button
           className="btn block w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
+          onClick={handleCart}
         >
           Add to Cart
         </button>
