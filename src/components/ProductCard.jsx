@@ -14,9 +14,9 @@ const ProductCard = ({ product }) => {
   } = product;
 
   return (
-    <div className="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border ">
+    <div className="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border dark:bg-neutral-400">
       <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 h-96 bg-white rounded-xl bg-clip-border">
-        <img src={image} className="w-full h-full" />
+        <img src={image} className="w-full h-full dark:brightness-75" />
       </div>
       <div className="p-6">
         <div className="flex items-center justify-between mb-2">
@@ -57,7 +57,7 @@ const ProductCard = ({ product }) => {
       <div className="p-6 pt-0">
       <Link to={`/updateProduct/${_id}`}>
         <button
-          className="btn block w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className="btn block w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:btn-primary"
           type="button"
         >
           Update
@@ -65,7 +65,7 @@ const ProductCard = ({ product }) => {
         </Link>
         <Link to={`/productDetails/${_id}`}>
           <button
-            className="btn block w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mt-2"
+            className="btn block w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mt-2 dark:btn-primary"
             type="button"
           >
             View Details
