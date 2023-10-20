@@ -1,6 +1,6 @@
 const cartLoader = async() => {
   const response = await fetch(
-    "http://localhost:3002/cart"
+    "https://server-halo.vercel.app/cart"
   );
   const products = await response.json();
 

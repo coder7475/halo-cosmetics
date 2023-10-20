@@ -24,7 +24,7 @@ const AddProduct = () => {
     }
 
     // send to database via server
-    fetch("http://localhost:3002/products", {
+    fetch("https://server-halo.vercel.app/products", {
       // fetch("http://localhost:3001/products", {
       method: "POST",
       headers: {

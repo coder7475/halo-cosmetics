@@ -22,7 +22,7 @@ const ProductDetails = () => {
       price,
     };
 
-    fetch("http://localhost:3002/cart", {
+    fetch("https://server-halo.vercel.app/cart", {
       // fetch("http://localhost:3001/products", {
       method: "POST",
       headers: {

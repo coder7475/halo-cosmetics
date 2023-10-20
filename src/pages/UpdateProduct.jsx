@@ -30,7 +30,7 @@ const UpdateProduct = () => {
       description
     }
     console.log(name, image, brand, price, type, rating, description);
-    fetch("http://localhost:3002/updateProduct", {
+    fetch("https://server-halo.vercel.app/updateProduct", {
       // fetch("http://localhost:3001/products", {
       method: "PUT",
       headers: {
