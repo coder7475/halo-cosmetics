@@ -11,6 +11,7 @@ import brandLoader from "../ulils/brandLoader";
 import ProductDetails from "../pages/ProductDetails";
 import MyCart from "../pages/MyCart";
 import cartLoader from '../ulils/cartLoader';
+import UpdateProduct from '../pages/UpdateProduct';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,16 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: brandLoader,
+      },
+      {
+        path: "/updateProduct/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateProduct />
+          </PrivateRoute>
+        ),
+        loader: brandLoader,
+
       },
       {
         path: "/signup",
