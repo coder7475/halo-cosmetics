@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../features/Authentication/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../features/Authentication/firebase.config";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const { signUp } = useContext(AuthContext);
@@ -25,7 +26,7 @@ const SignUp = () => {
 
     // console.log(ans);
     if (!ans) {
-      return alert("Invalid password");
+      return Swal.fire("Invalid!", "Your password must be at least 6 characters long, must have a a special character and a capital letter!", "error");
     }
 
     signUp(email, password)
