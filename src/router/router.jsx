@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import Products from '../pages/Products';
 import brandLoader from '../ulils/brandLoader';
 import ProductDetails from '../pages/ProductDetails';
+import MyCart from '../pages/MyCart';
 
 const router = createBrowserRouter([
   {
@@ -45,8 +46,15 @@ const router = createBrowserRouter([
           <PrivateRoute>
             <AddProduct />
           </PrivateRoute>
-        ),
+        ), 
       },
+      {
+        path: "/cart",
+        element: 
+        <PrivateRoute>
+          <MyCart/>
+        </PrivateRoute>        
+      }
     ],
   },
 ]);

@@ -37,6 +37,7 @@ const ProductDetails = () => {
       body: JSON.stringify(cartProduct)
     })
       .then(res => res.json())
+      // eslint-disable-next-line no-unused-vars
       .then(data => Swal.fire(
         'Success!',
         'You product has been added to the cart!',
