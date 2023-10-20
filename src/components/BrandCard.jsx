@@ -6,16 +6,16 @@ const BrandCard = ({ brand }) => {
 
   return (
     <Link to={`/${_id}`}>
-      <div className="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border dark:bg-blue ">
+      <div className="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border dark:bg-neutral-500 ">
         <div className="relative overflow-hidden text-gray-700 bg-white shadow-lg h-60 rounded-xl bg-clip-border">
           <img
             src={brand.image}
             alt="profile-picture"
-            className="h-full w-full"
+            className="h-full w-full dark:brightness-75"
           />
         </div>
         <div className="py-6 text-center">
-          <h4 className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          <h4 className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-neutral-100">
             {brand.name}
           </h4>
         </div>
