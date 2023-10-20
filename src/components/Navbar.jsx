@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar font-medium flex flex-col lg:flex-row justify-between items-center bg-white dark:bg-neutral-800 dark:text-white" >
+    <div className="navbar gap-2 font-medium flex flex-col lg:flex-row justify-between items-center bg-white dark:bg-neutral-800 dark:text-white" >
       <div className=" flex gap-2">
         <div className="flex flex-col items-center">
           <div className="flex justify-center items-center gap-2">
