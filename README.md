@@ -13,8 +13,6 @@ BrandShop - Halo Cosmetics & Beauty
 ### https://server-halo.vercel.app/sliders
 ### https://server-halo.vercel.app/products
 
-*Warning: server on vercel sometimes does not connect,
-          please try again after a few minutes
 
 ## Features
 
