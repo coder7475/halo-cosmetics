@@ -6,7 +6,7 @@ const TeamSection = () => {
           <h2 className="mb-4 text-center text-2xl text-gray-900 font-bold md:text-4xl text-darkBlue dark:text-white">
             Halo&apos;s leadership
           </h2>
-          <p className="text-gray-600 lg:w-8/12 lg:mx-auto mb-10">
+          <p className="text-gray-600 w-8/12 mx-auto mb-10 font-light">
             Halo&apos;s  prides itself not only on award-winning technology, but also
             on the talent of its people of some of the brightest minds and most
             experienced executives in business.
