@@ -31,7 +31,7 @@ const Navbar = () => {
               to="/"
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "active font-bold bg-darkBlue p-1 text-white"
+                  ? "active font-bold bg-darkBlue  text-white"
                   : isPending
                   ? "pending"
                   : ""
@@ -45,7 +45,7 @@ const Navbar = () => {
               to="/addProduct"
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "active font-bold bg-darkBlue p-1 text-white"
+                  ? "active font-bold bg-darkBlue  text-white"
                   : isPending
                   ? "pending"
                   : ""
@@ -59,7 +59,7 @@ const Navbar = () => {
               to="/cart"
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "active font-bold bg-darkBlue p-1 text-white"
+                  ? "active font-bold bg-darkBlue  text-white"
                   : isPending
                   ? "pending"
                   : ""

@@ -14,7 +14,7 @@ const BrandCard = ({ brand }) => {
             className="h-full w-full"
           />
         </div>
-        <div className="p-6 text-center">
+        <div className="py-6 text-center">
           <h4 className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
             {brand.name}
           </h4>
