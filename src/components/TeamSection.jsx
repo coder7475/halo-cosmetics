@@ -15,7 +15,7 @@ const TeamSection = () => {
         <div className="grid gap-12 items-center md:grid-cols-3">
           <div className="space-y-4 text-center">
             <img
-              className="w-64 h-64 mx-auto object-cover rounded-xl md:w-40 md:h-40 lg:w-64 lg:h-64"
+              className="dark:brightness-75 w-64 h-64 mx-auto object-cover rounded-xl md:w-40 md:h-40 lg:w-64 lg:h-64"
               src="https://i.ibb.co/WfLyxRZ/christina-wocintechchat-com-d-ZVU-OYz-Oi0-unsplash.jpg"
               alt="woman"
               loading="lazy"
@@ -30,7 +30,7 @@ const TeamSection = () => {
           </div>
           <div className="space-y-4 text-center">
             <img
-              className="w-64 h-64 mx-auto object-cover rounded-xl md:w-48 md:h-64 lg:w-64 lg:h-80"
+              className="dark:brightness-75 w-64 h-64 mx-auto object-cover rounded-xl md:w-48 md:h-64 lg:w-64 lg:h-80"
               src="https://i.ibb.co/wSpYMK8/itay-verchik-G3-ZAh-AJ2ojc-unsplash.jpg"
               alt="man"
               loading="lazy"
@@ -46,7 +46,7 @@ const TeamSection = () => {
           </div>
           <div className="space-y-4 text-center">
             <img
-              className="w-64 h-64 mx-auto object-cover rounded-xl md:w-40 md:h-40 lg:w-64 lg:h-64"
+              className="dark:brightness-75 w-64 h-64 mx-auto object-cover rounded-xl md:w-40 md:h-40 lg:w-64 lg:h-64"
               src="https://i.ibb.co/fkgcx9L/christina-wocintechchat-com-SJv-Dxw0azqw-unsplash.jpg"
               alt="woman"
               loading="lazy"
