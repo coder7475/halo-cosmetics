@@ -6,10 +6,11 @@ import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
 import AddProduct from "../pages/AddProduct";
 import PrivateRoute from "./PrivateRoute";
-import Products from '../pages/Products';
-import brandLoader from '../ulils/brandLoader';
-import ProductDetails from '../pages/ProductDetails';
-import MyCart from '../pages/MyCart';
+import Products from "../pages/Products";
+import brandLoader from "../ulils/brandLoader";
+import ProductDetails from "../pages/ProductDetails";
+import MyCart from "../pages/MyCart";
+import cartLoader from '../ulils/cartLoader';
 
 const router = createBrowserRouter([
   {
@@ -24,14 +25,17 @@ const router = createBrowserRouter([
       {
         path: "/:id",
         element: <Products />,
-        loader: brandLoader
+        loader: brandLoader,
       },
       {
         path: "/productDetails/:id",
-        element: <PrivateRoute><ProductDetails /></PrivateRoute>,
-        loader: brandLoader
-      }
-      ,
+        element: (
+          <PrivateRoute>
+            <ProductDetails />
+          </PrivateRoute>
+        ),
+        loader: brandLoader,
+      },
       {
         path: "/signup",
         element: <SignUp />,
@@ -46,15 +50,17 @@ const router = createBrowserRouter([
           <PrivateRoute>
             <AddProduct />
           </PrivateRoute>
-        ), 
+        ),
       },
       {
         path: "/cart",
-        element: 
-        <PrivateRoute>
-          <MyCart/>
-        </PrivateRoute>        
-      }
+        element: (
+          <PrivateRoute>
+            <MyCart />
+          </PrivateRoute>
+        ),
+        loader: cartLoader
+      },
     ],
   },
 ]);
