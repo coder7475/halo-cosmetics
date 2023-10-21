@@ -40,7 +40,7 @@ const AddProduct = () => {
         "success"
       ))
 
-    console.log(name, image, brand, price);
+    // console.log(name, image, brand, price);
     // console.log(type, rating, description);
 
 
