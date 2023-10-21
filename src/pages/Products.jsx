@@ -22,7 +22,7 @@ const Products = () => {
         <div className="carousel">
           <div id="slide1" className="carousel-item relative w-full">
             <img src={sliderObj.slider1} 
-              className="w-full h-96"
+              className="w-full h-96 dark:brightness-75"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide3" className="btn btn-circle">
@@ -36,7 +36,7 @@ const Products = () => {
           <div id="slide2" className="carousel-item relative w-full">
             <img
               src={sliderObj.slider2}
-              className="w-full h-96"
+              className="w-full h-96 dark:brightness-75"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide1" className="btn btn-circle">
@@ -50,7 +50,7 @@ const Products = () => {
           <div id="slide3" className="carousel-item relative w-full">
             <img
               src={sliderObj.slider3}
-              className="w-full h-96"
+              className="w-full h-96 dark:brightness-75"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide2" className="btn btn-circle">
@@ -64,8 +64,8 @@ const Products = () => {
           
         </div>
       </div>
-      <div className="min-h-screen dark:bg-neutral-500 pt-5">
-        <h1 className="text-5xl font-semibold text-center my-20 dark:text-neutral-300 ">Products</h1>
+      <div className=" dark:bg-neutral-500 ">
+        <h1 className="text-5xl font-semibold text-center p-10 dark:text-neutral-300 ">Products</h1>
         {
           brandProducts.length === 0 ? 
         <p className="text-3xl max-w-5xl mx-auto text-center mt-10">Sorry, we don&apos;t have any products available come back later</p>
