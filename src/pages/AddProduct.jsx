@@ -47,7 +47,7 @@ const AddProduct = () => {
   }
 
   return (
-    <section className="dark:bg-neutral-500">
+    <section className="min-h-screen dark:bg-neutral-600">
       <div className="py-8 px-4 mx-auto max-w-2xl">
         <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white text-center">
           Add a new product
