@@ -24,7 +24,7 @@ const TeamSection = () => {
             />
             
             <div>
-              <h4 className="text-2xl">Hentoni Doe</h4>
+              <h4 className="text-2xl">Corie Barry</h4>
               <span className="block text-sm text-gray-500">CEO-Founder</span>
             </div>
           </div>
@@ -38,7 +38,7 @@ const TeamSection = () => {
               height="667"
             />
             <div>
-              <h4 className="text-2xl">Jonathan Doe</h4>
+              <h4 className="text-2xl">Reza Attaran</h4>
               <span className="block text-sm text-gray-500">
                 Chief Technical Officer
               </span>
@@ -54,7 +54,7 @@ const TeamSection = () => {
               height="667"
             />
             <div>
-              <h4 className="text-2xl">Anabelle Doe</h4>
+              <h4 className="text-2xl">Rosalind Brewer</h4>
               <span className="block text-sm text-gray-500">
                 Chief Operations Officer
               </span>

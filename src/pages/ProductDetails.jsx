@@ -44,7 +44,7 @@ const ProductDetails = () => {
   // console.log(uid);
 
   return (
-    <div className="relative max-w-3xl mx-auto text-3xl text-center flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border mt-10 mb-10">
+    <div className="relative max-w-3xl mx-auto text-3xl text-center flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border mt-10 mb-10 ">
       <h1 className="font-bold">Product Details</h1>
       <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 h-96 bg-white rounded-xl bg-clip-border">
         <img src={image} className="w-full h-full" />
