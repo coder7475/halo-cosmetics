@@ -68,7 +68,7 @@ const Products = () => {
         <h1 className="text-5xl font-semibold text-center p-10 dark:text-neutral-300 ">Products</h1>
         {
           brandProducts.length === 0 ? 
-        <p className="text-3xl max-w-5xl mx-auto text-center mt-10">Sorry, we don&apos;t have any products available come back later</p>
+        <p className="text-3xl max-w-5xl mx-auto text-center mt-10 dark:text-white">Sorry, we don&apos;t have any products available come back later</p>
           : <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto pb-10">
             {
               brandProducts.map(product => <ProductCard product={product} key={product._id}></ProductCard>)
