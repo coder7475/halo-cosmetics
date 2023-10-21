@@ -64,7 +64,7 @@ const Products = () => {
           
         </div>
       </div>
-      <div className=" dark:bg-neutral-500 ">
+      <div className="min-h-screen dark:bg-neutral-500 ">
         <h1 className="text-5xl font-semibold text-center p-10 dark:text-neutral-300 ">Products</h1>
         {
           brandProducts.length === 0 ? 
