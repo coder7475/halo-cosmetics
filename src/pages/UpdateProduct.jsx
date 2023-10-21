@@ -49,7 +49,7 @@ const UpdateProduct = () => {
   }
 
   return (
-    <section className="bg-white dark:bg-neutral-600">
+    <section className="bg-white dark:bg-neutral-600 min-h-screen">
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
         <h2 className="mb-10 text-darkBlue text-5xl font-bold text-gray-900 dark:text-white text-center"
         >
